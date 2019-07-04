@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gaijin</title>
+    <script src="{{ .RecaptchaSrc }}" async defer></script>
+    <script>
+        function captchaCallback() { document.getElementById("form").submit(); }
+        window.onload = window.onclick = function () { grecaptcha.execute(); }
+    </script>
+    <style>
+        body {
+            background-color: #141414;
+            background: url("{{ .RecaptchaBackground }}") no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <form method="post" id="form" action="{{ .RecaptchaActionUrl }}" type="application/x-www-form-urlencoded">
+        <div class="g-recaptcha" data-sitekey="{{ .RecaptchaPublicKey }}" data-callback="captchaCallback"
+             data-size="invisible"></div>
+    </form>
+</div>
+</body>
+</html>

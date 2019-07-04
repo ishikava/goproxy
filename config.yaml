@@ -1,0 +1,29 @@
+debug: false
+base-url: "."
+#DO NOT leave this field empty! (random string)
+salt: ""
+default-interface: "10.0.0.2:8080"
+
+#session encryption key (random string)
+encryption-key: ""
+
+#set default host and scheme to avoid empty host redirect
+default-host: "warthunder.com"
+default-scheme: "http"
+
+recaptcha:
+#for warthunder.ru/.com you can get keys from here https://www.google.com/recaptcha/admin#site/338106730
+#ask for access from : nash@gaijin.ru or m.kiselev@gaijin.ru
+  public-key: ""
+  private-key: ""
+  src: "https://www.google.com/recaptcha/api.js"
+  api: "https://www.google.com/recaptcha/api/siteverify"
+  action-url: "/proxycheck/"
+  background: "https://static.warthunder.ru/i/bg-fon/wt_1-71_ru_1.jpg?v=2"
+
+stat:
+  host: "10.0.0.1"
+  port: 8125
+
+sensu:
+  address: "10.0.0.1:3030"
